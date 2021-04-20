@@ -17,19 +17,19 @@ function swap(arr, index1, index2) {
 
 function selectionSort(list) {
   let placeHolder = 0;
-  let smallest;
+  while(placeHolder < list.length - 1) {
+    let minIdx = placeHolder;
+    let j = placeHolder;
 
-  while(placeHolder < arr.length - 1){
-    if(arr[smallest] < arr[placeHolder]){
-
-      swap(list, placeHolder, smallest);
-
-    } else {
-
-      placeHolder++;
-
+    while (j <= list.length - 1) {
+      if(list[j] < list[minIdx]) {
+        minIdx = j;
+      }
+      j++;
     }
-    smallest++;
+
+    swap(list, minIdx, placeHolder);
+    placeHolder++;
   }
 }
 
